@@ -95,7 +95,8 @@ firehose = function() {
         dataType: "json",
         url: "https://popcorn.webmaker.org/api/projects/recentlyRemixed/20",
         success : function( response ) {
-          renderResponse( response.results, remixed = document.getElementById( "updated" ) );
+          console.log( response.results, 'response' );
+          renderResponse( response.results, remixed = document.getElementById( "remixes" ) );
         }
       });
     remixForm.addEventListener( "submit", remixSearch );
