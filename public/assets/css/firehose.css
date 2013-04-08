@@ -1,0 +1,52 @@
+html {
+    background: #F9F9F9;
+    min-height: 101%;
+}
+body {
+    overflow: visible;
+}
+h1 {
+    padding-top: 1em;
+}
+ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+.col {
+    float: left;
+    padding-right: 20px;
+    width: 25%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.make {
+    margin-left: 0;
+    padding: 0.5em 0;
+    border-bottom: 1px dashed #CCCCCC;
+    margin-bottom: 0.5em;
+    overflow: hidden;
+}
+.make a {
+    float: left;
+}
+.make ol {
+    clear: left;
+}
+.remix {
+    clear: left;
+    float: left;
+}
+ol.remixes {
+    margin-bottom: 0;
+}
+ol.remixes li {
+    margin-left: 0;
+}
+ol .remixes {
+    margin-left: 20px;
+}
+#search_remixes input[type="text"] {
+    width: 60px;
+    margin: 0 5px;
+}

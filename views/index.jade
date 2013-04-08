@@ -2,30 +2,28 @@
 html(lang='en')
   head
     title Projects
-    link(rel='stylesheet', href='https://popcorn.webmaker.org/media/css/sandstone.css')
-    link(rel='stylesheet', href='https://popcorn.webmaker.org/css/butter.ui.css')
-    link(rel='stylesheet', href='//www.mozilla.org/tabzilla/media/css/tabzilla.css')
-    style
-      html {
-        background: #F9F9F9;
-        min-height: 101%;
-      }
-      body {
-        overflow: visible;
-      }
-      h1 {
-        padding-top: 1em;
-      }
+    link(rel="stylesheet", href="https://popcorn.webmaker.org/media/css/sandstone.css")
+    link(rel="stylesheet", href="https://popcorn.webmaker.org/css/butter.ui.css")
+    link(rel="stylesheet", href="/assets/css/firehose.css")
   body
     nav#webmaker-nav
     div#wrapper
       div.container
         h1 Project APIs
         p We now have API's, and by gad are we going to use them!
-        #fooer
-        h2#new Recent makes
-        h2#updated Recently updated
-        h2#remixed Recently remixed
+        section.col
+          h2#new Recent makes
+        section.col
+          h2#updated Recently updated
+        section.col
+          h2 Recently remixed
+        section.col
+          h2 Find me remixes
+          p Looking for a specific projects remixes? Search for remixes by project ID using the form below.
+          form(action="remixes/", method="GET")#search_remixes
+            label(for="want_remix") Project ID
+            input(type="text", name="want_remix", id="want_remix") 
+            input(type="submit", value="Find").butter-btn.btn-green.start
         script(src="http://code.jquery.com/jquery-1.9.1.min.js")
-        script(src='https://popcorn.webmaker.org/src/webmakernav.js')
-        script(src='assets/js/firehose.js')
+        script(src="https://popcorn.webmaker.org/src/webmakernav.js")
+        script(src="assets/js/firehose.js")
