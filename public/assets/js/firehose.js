@@ -1,7 +1,6 @@
 /* ANNOYS:
   - fix broken image (this is in webmaker nav so need to fix there)
   - chuck in the ability to search for more than 20 things at a time?
-  - convert templates to nunjucks?
 */
 
 var firehose = window.firehouse || {};

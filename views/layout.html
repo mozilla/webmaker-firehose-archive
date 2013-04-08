@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=utf-8">
+        <title>{% block extra_title %}{% endblock %}Webmaker Firehose</title>
+        <link rel="stylesheet" type="text/css" href="https://popcorn.webmaker.org/media/css/sandstone.css">
+        <link rel="stylesheet" type="text/css" href="https://popcorn.webmaker.org/css/butter.ui.css">
+        {% block css %}{% endblock %}
+    </head>
+    <body>
+        <nav id="webmaker-nav"></nav>
+        <div id="wrapper">
+            {% block content %}{% endblock %}
+        </div>
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="https://popcorn.webmaker.org/src/webmakernav.js"></script>
+        {% block js %}{% endblock %}
+    <body>
+</html>
