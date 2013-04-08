@@ -1,0 +1,13 @@
+{
+  "name": "webmaker-firehose",
+  "version": "0.0.1",
+  "description": "A veritable firehose of projects from Webmaker",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mozilla/webmaker-firehose.git"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "~3.1.1"
+  }
+}
