@@ -1,9 +1,26 @@
-(function() {
-  function insertAfter( referenceNode, newNode ) {
-    referenceNode.parentNode.insertBefore( newNode, referenceNode.nextSibling );
-  }
+/* TODO:
+  - add in a form for finding remixes on a special projectID
+  - columns, add in a column grid to make things look less shit
+  - css, make some better CSS and remove the need for the butter.ui.css file?
+  - chuck in the ability to search for more than 20 things at a time
+  - lots of repeated code, we should fix that I think
+  - convert templates to nunjucks
 
-  function renderResponse( data, sibling, parent ) {
+  ANNOYS:
+  - fix broken image (this is in webmaker nav)
+*/
+
+var firehose = window.firehouse || {};
+
+firehose = function() {
+
+  var insertAfter, renderResponse, ignition, init;
+
+  insertAfter = function( referenceNode, newNode ) {
+    referenceNode.parentNode.insertBefore( newNode, referenceNode.nextSibling );
+  };
+
+  renderResponse = function( data, sibling, parent ) {
     var frag = document.createDocumentFragment();
     if ( !data.length ) {
       var li = document.createElement( "li" );
@@ -20,9 +37,9 @@
       parent.appendChild( frag );
     }
     insertAfter( sibling, parent );
-  }
+  };
 
-  function ignition( e ) {
+  ignition = function( e ) {
     var target = e.target;
     if ( target.className === "remix" ) {
       var remixId = target.getAttribute( "data-remixId");
@@ -37,13 +54,15 @@
       });
       e.preventDefault();
     }
-  }
+  };
 
-  function init() {
+  init = function() {
     var create = document.getElementById( "new" ),
         apiCreates = document.createElement( "ol" ),
         updates = document.getElementById( "updated" ),
-        apiUpdates = document.createElement( "ol" );
+        apiUpdates = document.createElement( "ol" ),
+        remixed = document.getElementById( "updated" ),
+        remixedUpdates = document.createElement( "ol" );
     $.ajax({
         type: "GET",
         dataType: "json",
@@ -60,10 +79,23 @@
           renderResponse( response.results, updates, apiUpdates  );
         }
       });
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "https://popcorn.webmaker.org/api/projects/recentlyRemixed/20",
+        success : function( response ) {
+          renderResponse( response.results, remixed, remixedUpdates  );
+        }
+      });
     apiCreates.addEventListener( "click", ignition );
     apiUpdates.addEventListener( "click", ignition );
-  }
+    remixedUpdates.addEventListener( "click", ignition );
+  };
 
-  init();
+  return {
+    "init": init
+  };
 
-})();
+}();
+
+firehose.init();
