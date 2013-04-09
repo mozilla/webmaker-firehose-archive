@@ -8,24 +8,26 @@
 <div class="container">
     <h1>Project APIs</h1>
     <p>We now have API's, and by gad are we going to use them!</p>
-    <section class="col">
-          <h2 id="new">Recent makes</h2>
-    </section>
-    <section class="col">
-        <h2 id="updated">Recently updated</h2>
-    </section>
-    <section class="col">
-          <h2 id="remixes">Recent remixes</h2>
-    </section>
-    <section class="col">
-          <h2>Find me remixes</h2>
-          <p>Looking for a specific projects remixes? Search for remixes by project ID using the form below.</p>
-          <form action="remixes/" method="GET" id="search_remixes">
-            <label for="want_remix">Project ID</label>
-            <input type="text" name="want_remix" id="want_remix" />
-            <input type="submit" value="Find" class="butter-btn btn-green start" />
-        </form>
-    </section>
+    <div class="hack" style="overflow: hidden;">
+        <section class="col">
+            <h2 id="new">Recent makes</h2>
+        </section>
+        <section class="col">
+            <h2 id="updated">Recently updated</h2>
+        </section>
+        <section class="col">
+            <h2 id="remixes">Recent remixes</h2>
+        </section>
+        <section class="col">
+            <h2>Find me remixes</h2>
+            <p>Looking for a specific projects remixes? Search for remixes by project ID using the form below.</p>
+            <form action="remixes/" method="GET" id="search_remixes">
+                <label for="want_remix">Project ID</label>
+                <input type="text" name="want_remix" id="want_remix" />
+                <input type="submit" value="Find" class="butter-btn btn-green start" />
+            </form>
+        </section>
+    </div>
 </div>
 {% endblock %}
 

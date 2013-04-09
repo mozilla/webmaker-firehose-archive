@@ -27,7 +27,7 @@ firehose = function() {
       data.forEach( function( d ) {
         var li = document.createElement( "li" ),
             viewUrl = "<a href='" + d.publishUrl + "'>" + d.name + "</a>",
-            remixUrl = "<a data-remixId='" + d.id + "' class='remix butter-btn btn-green start' href='remixes/" + d.id + "'>Find remixes</a>";
+            remixUrl = "<a data-remixId='" + d.id + "' class='remix butter-btn btn-light start' href='remixes/" + d.id + "'>Find remixes</a>";
         li.innerHTML = viewUrl + " "  + remixUrl;
         li.className = "make";
         frag.appendChild( li );

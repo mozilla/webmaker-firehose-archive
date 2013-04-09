@@ -14,11 +14,20 @@ ol {
 }
 .col {
     float: left;
-    padding-right: 20px;
+    padding: 0 20px 90000px;
+    margin-bottom: -90000px;
     width: 25%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    border-right: 1px solid #CCCCCC;
+}
+.col:first-child {
+    padding-left: 0;
+}
+.col:last-child {
+    border-right: 0;
+    padding-right: 0;
 }
 .make {
     margin-left: 0;
