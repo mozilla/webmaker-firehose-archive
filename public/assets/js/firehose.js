@@ -57,6 +57,7 @@ firehose = function() {
 
   remixSearch = function( e ) {
     var remixID = document.getElementById( "want_remix" ).value,
+        convertedID = parseInt ( remixID, 36 ),
         sibling = e.target.nextSibling;
     if ( sibling ) {
       sibling.parentNode.removeChild( sibling );
@@ -64,7 +65,7 @@ firehose = function() {
     $.ajax({
         type: "GET",
         dataType: "json",
-        url: "https://popcorn.webmaker.org/api/project/" + remixID + "/remixes",
+        url: "https://popcorn.webmaker.org/api/project/" + convertedID + "/remixes",
         success : function( response ) {
           renderResponse ( response.results, e.target, "remixes" );
         }
@@ -95,7 +96,6 @@ firehose = function() {
         dataType: "json",
         url: "https://popcorn.webmaker.org/api/projects/recentlyRemixed/20",
         success : function( response ) {
-          console.log( response.results, 'response' );
           renderResponse( response.results, remixed = document.getElementById( "remixes" ) );
         }
       });
